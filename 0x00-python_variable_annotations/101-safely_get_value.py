@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
-"""Safely get a value from a dictionary"""
+'''Task 11: More involved type annotations
+'''
+from typing import Any, Mapping, Union, TypeVar
 
-
-from typing import TypeVar, Mapping, Any, Union
 
 T = TypeVar('T')
+Res = Union[Any, T]
+Def = Union[T, None]
 
 
-def safely_get_value(
-    dct: Mapping,
-    key: Any,
-    default: T = None
-) -> Union[Any, T]:
-    "Safely get a value from a dictionary"
+def safely_get_value(dct: Mapping, key: Any, default: Def = None) -> Res:
+    '''Retrieves a value from a dict using a given key.
+    '''
     if key in dct:
         return dct[key]
     else:
         return default
+    
