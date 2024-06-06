@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
-"""Zoom in on the elements of the input list by repeating each element"""
+'''Task 12: Type Checking
+'''
+from typing import List, Tuple
 
 
-from typing import Tuple, List, Iterable
-
-
-def zoom_array(lst: Iterable, factor: int = 2) -> List:
-    "Zoom in on the elements of the input list by repeating each element"
+def zoom_array(lst: Tuple, factor: int = 2) -> List:
+    '''Creates multiple copies of items in a tuple.
+    '''
     zoomed_in: List = [
         item for item in lst
-        for i in range(int(factor))
+        for i in range(factor)
     ]
     return zoomed_in
 
 
-array = [12, 72, 91]
+array = (12, 72, 91)
 
 zoom_2x = zoom_array(array)
 
